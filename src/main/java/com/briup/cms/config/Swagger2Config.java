@@ -37,7 +37,7 @@ public class Swagger2Config {
 				.title("看点咨询接口文档")
 				.description("昆山杰普软件科技有限公司，http://www.briup.com")
 				.termsOfServiceUrl("http://www.briup.com")
-				.version("1.1")
+				.version("1.0")
 				.build();
 	}
 }
