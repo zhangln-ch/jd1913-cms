@@ -30,7 +30,7 @@ public class CategoryController {
     }
 
     @GetMapping("/delete")
-    @ApiOperation("删除栏目")
+    @ApiOperation("根据id删除栏目")
     @ApiImplicitParam(name = "id",value = "栏目id",paramType = "query",dataType = "int",required = true)
     public Message deleteCategory(int id) {
         categoryService.deleteCategory(id);
@@ -38,7 +38,7 @@ public class CategoryController {
     }
 
     @GetMapping("/queryById")
-    @ApiOperation("根据id查询")
+    @ApiOperation("根据id查询栏目")
     @ApiImplicitParam(name = "id",value = "栏目id",paramType = "query",dataType = "int",required = true)
     public Message<Category> queryById(int id) {
         Category category = categoryService.queryById(id);
@@ -53,7 +53,7 @@ public class CategoryController {
     }
 
     @GetMapping("/getAll")
-    @ApiOperation("获取所有栏目数据")
+    @ApiOperation("查询所有栏目")
     public Message<List<Category>> getAll() {
         List<Category> categories = categoryService.getAllCategory();
         return MessageUtil.success(categories);

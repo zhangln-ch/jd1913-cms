@@ -1,5 +1,7 @@
 package com.briup.cms.bean;
 
+import io.swagger.annotations.ApiModel;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
