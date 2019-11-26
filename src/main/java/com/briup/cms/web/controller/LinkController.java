@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/link")
 @Api(description = "链接管理")
@@ -49,5 +51,12 @@ public class LinkController {
     public Message update(Link link) {
         linkService.saveOrUpdateLink(link);
         return MessageUtil.success();
+    }
+
+    @GetMapping("/getAll")
+    @ApiOperation("获取所有链接数据")
+    public Message<List<Link>> getAll() {
+        List<Link> links = linkService.getAllLink();
+        return MessageUtil.success(links);
     }
 }
