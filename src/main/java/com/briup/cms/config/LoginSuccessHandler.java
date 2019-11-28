@@ -6,6 +6,7 @@ import com.briup.cms.util.Message;
 import com.briup.cms.util.MessageUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -19,6 +20,7 @@ import java.io.IOException;
 
 public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     @Autowired
+    @Qualifier("userDetailServiceImpl")
     private UserDetailsService userDetailsService;
     @Autowired
     private ObjectMapper objectMapper;
